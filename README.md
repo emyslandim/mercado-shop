@@ -28,7 +28,7 @@ Para executar o cliente, é necessário ter o Node.js instalado em sua máquina 
 
 1. Navegue até a pasta do cliente: `cd frontend`
 2. Instale as dependências: `npm install`
-3. Crie um arquivo .env utilizando como base o .env.example e adicione o `ACCESS_TOKEN`: token de acesso da API do mercado pago
+3. Crie um arquivo .env utilizando como base o .env.example e adicione o `VITE_ACCESS_TOKEN`: token de acesso da API do mercado pago
 5. Inicie o cliente: `npm run dev`
 
 Esses passos vão iniciar o cliente e um servidor local, na porta 3000 e 500.
