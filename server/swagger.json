@@ -1,0 +1,114 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Payment API",
+    "description": "API para realizar pagamentos"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "Servidor local"
+    }
+  ],
+  "paths": {
+    "/payments": {
+      "post": {
+        "summary": "Realiza um pagamento",
+        "description": "Endpoint para realizar um pagamento",
+        "requestBody": {
+          "description": "Informações do pagamento",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "description": {
+                    "type": "string",
+                    "description": "Descrição do pagamento"
+                  },
+                  "installments": {
+                    "type": "integer",
+                    "description": "Número de parcelas (somente 1 parcela é permitida)"
+                  },
+                  "payer": {
+                    "type": "object",
+                    "properties": {
+                      "email": {
+                        "type": "string",
+                        "description": "E-mail do pagador"
+                      }
+                    }
+                  },
+                  "payment_method_id": {
+                    "type": "string",
+                    "description": "Método de pagamento utilizado (somente Pix é permitido)"
+                  },
+                  "transaction_amount": {
+                    "type": "number",
+                    "description": "Valor do pagamento em reais (BRL)"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Pagamento realizado com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Status do pagamento"
+                    },
+                    "payment_id": {
+                      "type": "string",
+                      "description": "Identificador do pagamento"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Requisição inválida",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "description": "Mensagem de erro"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno do servidor",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "description": "Mensagem de erro"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
