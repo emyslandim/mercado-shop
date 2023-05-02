@@ -1,6 +1,8 @@
 # Mercado Shop
 Loja de roupa que aceita pagamentos via pix orquestrados pela api do mercado pago. 
 
+<img width="1792" alt="Captura de Tela 2023-05-01 às 20 56 04" src="https://user-images.githubusercontent.com/44002213/235551836-a838c5d4-a6f1-484c-af3d-f958827bc41d.png">
+
 ## Tecnologias Utilizadas
 
 - [Node.js](https://nodejs.org)
