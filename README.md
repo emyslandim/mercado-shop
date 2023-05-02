@@ -41,3 +41,8 @@ O servidor fornece as seguintes rotas da API:
 
 - `POST /api/payments`: cria um novo pagamento com base nos dados fornecidos no corpo da solicitação.
 
+### Como acessar a documentação da API
+Para acessar a documentação da API gerada pelo Swagger, basta executar o projeto e acessar a seguinte URL no seu navegador: http://localhost:5000/api-docs.
+
+Ao acessar essa URL, você será redirecionado para a documentação da API, que apresentará uma visão geral dos endpoints disponíveis e dos parâmetros esperados.
+
